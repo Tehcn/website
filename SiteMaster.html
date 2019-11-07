@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src = https://code.jquery.com/jquery-3.1.1.js></script>
+		<script src = 'http://danml.com/js/download2.js'></script>
+		<title>RevJS | Simple. Fast. Readable.</title>
+	</head>
+	<body>
+		<h1>RevJS</h1>
+		<h2>Simple. Fast. Readable.</h2>
+		<p>Download RevJS</p>
+		<button onClick = downloadRevJS();>Download</button>
+		<script>
+			function downloadRevJS() {
+				download(`
+					//Replaces console.log
+					function log(x) {
+						console.log(x);
+					}
+					//Writes Text To An Element
+					function write(element, x) {
+						$(element).html(x);
+					}
+					//Appends Text To An Element
+					function append(element, x) {
+					    $(element).append(x);
+					}
+					//Prepends Text To An Element
+					function prepend(element, x) {
+					    $(element).prepend(x);
+					}
+				`, 'RevJS.js', 'text/plain');
+			}
+		</script>
+	</body>
+</html>
